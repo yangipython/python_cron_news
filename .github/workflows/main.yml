@@ -19,4 +19,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run Python script
-        run: python news.py ${{ secrets.MY_TOKEN }}
+        env:
+          MY_TOKEN: ${{ secrets.MY_TOKEN }}
+        run: python news.py
